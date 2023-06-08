@@ -1,42 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event listerner and navigation</title>
-    <style>
-        body{
-            overflow: hidden;
-            background-image: linear-gradient(to bottom, red,orange,yellow,green,blue,indigo,violet);
-        }
-        .container{
-            width: 100%;
-            height: 100vh;
-            margin: 20px;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-        }
-        .box{
-            width: 20%;
-            height: 50%;
-            border: 1px solid black;
-            margin: 10px;
-            background-size: cover;
-            transition: all 0.3s ease-in-out;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <div class="container">
-        <div class="box" onmouseover="sizeChange" onmouseout="resetSize"></div>
-        <div class="box" onmouseover="colorChange" onmouseout="resetColor"></div>
-        <div class="box" onmouseover="imgChange" onmouseout="resetImg"></div>
+    <span>Mouse over effect</span>
+    <div class="container flex">
+        <!-- Size change box -->
+        <div class="box sizeChangeBox" onmouseover="sizeChange(this)" onmouseout="resetSize(this)"></div>
+        <!-- Images change -->
+        <div class="box imgchangeBox" onmouseover="imgChange(this)" onmouseout="resetImg(this)"></div>
+        <!-- Color change box -->
+        <div class="box colorChangeBox" onmouseover="colorChange(this)" onmouseout="resetColor(this)"></div>
     </div>
 
-    <script>
-    </script>
+    <script src="js/index.js"></script>
 </body>
+
 </html>
