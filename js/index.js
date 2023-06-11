@@ -7,8 +7,8 @@ function sizeChange(element) {
 }
 // Size change reset function mouseout effect
 function resetSize(element) {
-    element.style.width = "20%";
-    element.style.height = "50%";
+    element.style.width = "15%";
+    element.style.height = "40%";
 }
 // Image change function mouseover effect
 function imgChange(element) {
@@ -49,4 +49,16 @@ function colorChange(element) {
 function resetColor(element) {
     element.style.backgroundColor = "#6f8120";
     element.style.borderRadius = "10px";
+}
+// Change the all property in one click
+let changeCount = 0;
+function changeAll() {
+    changeCount++;
+    if (changeCount % 2 === 1) {
+        sizeChange(document.querySelector(".sizeChangeBox"));
+        imgChange(document.querySelector(".imgchangeBox"));
+        colorChange(document.querySelector(".colorChangeBox"));
+    } else {
+        resetImg(document.querySelector(".imgchangeBox"));
+    }
 }
