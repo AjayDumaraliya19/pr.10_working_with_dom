@@ -5,7 +5,6 @@
         }
 
         body {
-            /* overflow: hidden; */
             background: linear-gradient(to right, #21213b, #f3e4ff);
         }
 
@@ -27,9 +26,8 @@
         }
 
         .box {
-            width: 15%;
-            height: 40%;
-            border: 1px solid black;
+            width: 300px;
+            height: 300px;
             margin: 10px;
             border: 1px solid white;
             border-radius: 10px;
@@ -52,11 +50,8 @@
         #image-content {
             font-size: 30px;
             font-weight: 700;
-            padding: 40px;
+            padding: 5px;
             text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100%;
         }
 
