@@ -10,6 +10,7 @@ function resetSize(element) {
     element.style.width = "15%";
     element.style.height = "40%";
 }
+
 // Image change function mouseover effect
 function imgChange(element) {
     let images = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg", "img7.jpg", "img8.jpg", "img9.jpg"];
@@ -18,7 +19,7 @@ function imgChange(element) {
     element.style.backgroundImage = "url('" + randomImage + "')";
 
     const changeContents = document.getElementById("image-content");
-    changeContents.innerHTML = "";
+    changeContents.style.display = "none";
 }
 // Image change reset function
 function resetImg(element) {
@@ -34,11 +35,13 @@ function resetImg(element) {
         "Money and success don’t change people; they merely amplify what is already there.",
         "Not how long, but how well you have lived is the main thing."
     ];
-    const changecontents = document.getElementById("image-content");
+    const changeContents = document.getElementById("image-content");
     let randomcontentIndex = Math.floor(Math.random() * content.length);
     let randomcontent = content[randomcontentIndex];
-    changecontents.innerHTML = randomcontent;
+    changeContents.style.display = "inline-block";
+    changeContents.innerHTML = randomcontent;
 }
+
 // Color change function
 function colorChange(element) {
     let Change_color = "#" + Math.floor(Math.random() * 16737230).toString(16);
@@ -50,15 +53,26 @@ function resetColor(element) {
     element.style.backgroundColor = "#6f8120";
     element.style.borderRadius = "10px";
 }
-// Change the all property in one click
+// Change continue the all property in one click
+let intervalId = null; // Global variable to hold the interval ID
 let changeCount = 0;
+
 function changeAll() {
-    changeCount++;
-    if (changeCount % 2 === 1) {
-        sizeChange(document.querySelector(".sizeChangeBox"));
-        imgChange(document.querySelector(".imgchangeBox"));
-        colorChange(document.querySelector(".colorChangeBox"));
+    if (intervalId) {
+        // If an interval is already running, clear it
+        clearInterval(intervalId);
+        intervalId = null;
     } else {
-        resetImg(document.querySelector(".imgchangeBox"));
+        // Start the interval and store its ID
+        intervalId = setInterval(() => {
+            changeCount++;
+            if (changeCount % 2 === 1) {
+                sizeChange(document.querySelector(".sizeChangeBox"));
+                imgChange(document.querySelector(".imgchangeBox"));
+                colorChange(document.querySelector(".colorChangeBox"));
+            } else {
+                resetImg(document.querySelector(".imgchangeBox"));
+            }
+        }, 1000); // Change the time interval (in milliseconds) as needed
     }
 }

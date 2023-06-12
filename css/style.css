@@ -44,11 +44,7 @@
 
         .imgchangeBox {
             padding: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-
         .colorChangeBox {
             background-color: #6f8120;
         }
@@ -69,7 +65,7 @@
             background: black;
             font-size: 30px;
             font-weight: 700;
-            width: 300px;
+            width: 500px;
             border: 1px solid black;
             margin: 0 auto 50px;
             display: block;
