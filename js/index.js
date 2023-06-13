@@ -11,6 +11,7 @@ function resetSize(element) {
     element.style.height = "40%";
 }
 
+
 // Image change function mouseover effect
 function imgChange(element) {
     let images = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg", "img7.jpg", "img8.jpg", "img9.jpg"];
